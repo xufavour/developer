@@ -6,6 +6,9 @@ package com.xufavour.developer.java.basics;
  **/
 public class Bootstrap {
 
+    public static void main(String[] args) {
+        String str = "test";
+    }
 
 
 }
