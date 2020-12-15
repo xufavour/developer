@@ -45,15 +45,23 @@ public interface InterfaceExample {
 class InterfaceTest implements InterfaceExample{
 
     @Override
-    public void methodA() {
-
+    public final void methodA() {
+        System.out.println("methodA");
     }
+
+    // jdk1.8后 接口中可以中静态方法,静态方法则必须实现。
+    public static void staticMethod(){
+        System.out.println("InterfaceTest 接口的 staticMethod 方法！");
+    }
+
 
     public static void main(String[] args) {
         InterfaceTest instance = new InterfaceTest();
 //        interfaceVar = "3"; 不能修改
-        System.out.println(interfaceVar);
+        System.out.println(InterfaceTest.interfaceVar);
+        instance.methodA();
         System.out.println(instance.defaultMethod());
-        InterfaceExample.staticMethod(); // 调用静态方法
+//        InterfaceExample.staticMethod(); // 调用静态方法
+        InterfaceTest.staticMethod();
     }
 }
